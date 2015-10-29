@@ -1,14 +1,14 @@
 <ul>
     <li>
-        <a href="./">Accueil</a>
+        <a href="<?php echo CHEMIN_ABSOLU ?>">Accueil</a>
     </li>
 <?php foreach($menu AS $value) :?>
     <li>
-        <a href="./?idperiode=<?php echo $value->id ?>"><?php echo $value->laperiode; ?></a>
+        <a href="<?php echo CHEMIN_ABSOLU ?>periode/<?php echo $value->leslug ?>/"><?php echo $value->laperiode; ?></a>
     </li>
 <?php endforeach; ?> 
     <li>
-        <a href="./?connect">Connexion</a>
+        <a href="<?php echo CHEMIN_ABSOLU ?>?connect">Connexion</a>
     </li>
 </ul>
 

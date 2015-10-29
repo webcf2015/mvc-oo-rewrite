@@ -13,6 +13,11 @@ class EcrivainManager {
         $query = $this->db->query("SELECT * FROM ecrivain ORDER BY id");
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
+    public function recupPeriode($id){
+        $id = (int) $id;
+        $query = $this->db->query("SELECT * FROM ecrivain WHERE sciecle_id=$id ORDER BY id");
+        return $query->fetchAll(PDO::FETCH_OBJ);
+    }
 
     public function recupUn($int){
         $int = (int) $int;

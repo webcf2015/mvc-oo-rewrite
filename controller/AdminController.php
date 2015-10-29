@@ -11,6 +11,8 @@ require 'model/LivreManager.php';
 require 'model/EcrivainManager.php';
 require 'model/EcrivainAdminManager.php';
 require 'model/LivreAdminManager.php';
+// pour la gestion et création des slugs
+require 'model/createSlug.php';
 
 // connexion
 $pdo = MaPDO::getConnection(DB_SELECT, DB_USER, DB_PWD, TRUE);

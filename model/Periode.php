@@ -3,6 +3,7 @@
 class Periode {
     // attr
     private $id;
+    private $leslug;
     private $laperiode;
 
     public function __construct(array $valeurs){
@@ -31,7 +32,14 @@ class Periode {
         $int = (int) $int;
         $this->id = $int;
     }
+public function getLeslug(){
+        return $this->leslug;
+    }
 
+    public function setLeslug($char){
+        $char = $char;
+        $this->leslug = $char;
+    }
     // -- laperiode
     public function getLaperiode(){
         return $this->laperiode;

@@ -14,9 +14,9 @@ class PeriodeManager {
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public function recupUn($int){
-        $int = (int) $int;
-        $query = $this->db->query("SELECT * FROM periode WHERE id = $int");
-        return $query->fetch(PDO::FETCH_ASSOC);
+    public function recupUn($str){
+        $str = CreateSlug::slugify($str);
+        $query = $this->db->query("SELECT * FROM periode WHERE leslug = '$str'");
+        return $query->fetch(PDO::FETCH_OBJ);
     }
 }

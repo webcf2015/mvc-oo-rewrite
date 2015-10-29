@@ -5,7 +5,7 @@
     <title></title>
 </head>
 <body>
-    <h1>Les Poètes Francophones section <?php echo $periode['laperiode'] ?>e siècle</h1>
+    <h1>Les Poètes Francophones section <?php echo $periode->laperiode ?>e siècle</h1>
     <?php
         include 'view/menu.php';
     ?>

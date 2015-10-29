@@ -3,6 +3,7 @@
 class Livre {
     // attr
     private $id;
+    private $leslug;
     private $letitre;
     private $ladescription;
     private $lasortie;
@@ -34,7 +35,14 @@ class Livre {
         $int = (int) $int;
         $this->id = $int;
     }
+public function getLeslug(){
+        return $this->leslug;
+    }
 
+    public function setLeslug($char){
+        $char = $char;
+        $this->leslug = $char;
+    }
     // -- letitre
     public function getLetitre(){
         return $this->letitre;

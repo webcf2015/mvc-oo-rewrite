@@ -1,3 +1,4 @@
 Options +FollowSymlinks
 # activation de la réécriture si mod_rewrite.so est activé dans httpd.conf
 RewriteEngine on
+RewriteRule ^periode/(.+)/$ index.php?slugperiode=$1 [L]

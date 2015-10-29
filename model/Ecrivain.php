@@ -3,6 +3,7 @@
 class Ecrivain {
     // attr
     private $id;
+    private $leslug;
     private $lenom;
     private $labio;
     private $sciecle_id;
@@ -32,6 +33,14 @@ class Ecrivain {
     public function setId($int){
         $int = (int) $int;
         $this->id = $int;
+    }
+    public function getLeslug(){
+        return $this->leslug;
+    }
+
+    public function setLeslug($char){
+        $char = $char;
+        $this->leslug = $char;
     }
 
     // -- lenom

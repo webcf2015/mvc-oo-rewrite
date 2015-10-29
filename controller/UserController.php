@@ -10,23 +10,21 @@ require 'model/PeriodeManager.php';
 require 'model/LivreManager.php';
 require 'model/EcrivainManager.php';
 require 'model/EcrivainAdminManager.php';
+// pour la gestion et création des slugs
+require 'model/createSlug.php';
 
-if(isset($_GET['idperiode'])){
+if(isset($_GET['slugperiode'])){
     // require all links in menu
     $periode_m = new PeriodeManager(MaPDO::getConnection(DB_SELECT, DB_USER, DB_PWD, TRUE));
     $menu = $periode_m->recupTous();
 
-    $id = (int) $_GET['idperiode'];
-    $periode = $periode_m->recupUn($id);
+    $slug = $_GET['slugperiode'];
+    $periode = $periode_m->recupUn($slug);
+    $id_periode = $periode->id;
 
     $ecrivain_m = new EcrivainManager(MaPDO::getConnection(DB_SELECT, DB_USER, DB_PWD, TRUE));
-    $tous_ecrivains = $ecrivain_m->recupTous();
+    $tous_ecrivains = $ecrivain_m->recupPeriode($id_periode);
 
-    foreach($tous_ecrivains AS $key => $value){
-        if($value->sciecle_id != $id){
-            unset($tous_ecrivains[$key]);
-        }
-    }
 
     include 'view/periode.php';
 }elseif(isset($_GET['idecrivain'])){
